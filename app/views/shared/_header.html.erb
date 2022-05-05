@@ -1,19 +1,18 @@
-   <div class='pc'>
-       <ul>
-           <li><%= link_to t('views.header.home'),posts_path %></li>
-           <% if user_signed_in? %>
-           <li><%= link_to t('views.header.product'), new_product_path %></li>
-           <li><%= link_to t('views.header.mypage'), user_path(current_user.id) %></li>
-           <li><%= link_to t('views.header.logout'), destroy_user_session_path, method: :delete %></li>
-
-           <% else %>
-           <li><%= link_to t('views.header.sign_in'), new_user_registration_path %></li>
-           <li> <%= link_to t('views.header.login'), new_user_session_path %></li>
-           <% end %>
-           <%= form_with url: products_path, method: :get, local: true do |form| %>
-           <%= form.select("label_id", Label.pluck(:genre, :id), { include_blank: true }) %>
-           <%= form.submit 'ジャンル別検索', name: nil %></li>
-           <% end %>
-           </li>
-       </ul>
-   </div>
+<div class='pc'>
+    <ul class='navbar'>
+        <li><%= link_to t('views.header.home'),products_path %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to t('views.header.product'), new_product_path %></li>
+        <li><%= link_to t('views.header.mypage'), user_path(current_user.id) %></li>
+        <li><%= link_to t('views.header.logout'), destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to t('views.header.sign_in'), new_user_registration_path %></li>
+        <li> <%= link_to t('views.header.login'), new_user_session_path %></li>
+        <% end %>
+        <%# <%= form_with url: products_path, method: :get, local: true do |form| %>
+        <%# <%= form.select("label_id", Label.pluck(:genre, :id), { include_blank: true }) %>
+        <%# <%= form.submit 'ジャンル別検索', name: nil %></li>
+        <%# <% end %>
+        </li>
+    </ul>
+</div>
