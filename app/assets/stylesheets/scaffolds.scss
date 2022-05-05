@@ -1,11 +1,14 @@
 body {
   background-color: #fff;
-  color: #333;
-  margin: 33px; }
+  color: rgb(201, 183, 183);
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  margin: 0;}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  color:black;
   line-height: 18px; }
 
 pre {
@@ -63,3 +66,71 @@ div.actions {
 
 label {
   display: block; }
+// header
+header {
+  margin-top: 0;
+  background:linear-gradient(to left,rgb(99, 98, 98),rgb(215, 215, 226));
+  height: 70px;
+  display: flex;
+  
+}
+.pc{
+  margin-top: 0;
+  background:linear-gradient(to left,rgb(198, 184, 184),rgb(215, 215, 226));
+  height: 70px;
+  display: flex;
+
+}
+.navbar{
+  margin-left: auto;
+  display: flex;
+}
+.navbar li{
+  list-style: none;
+  color:#fff;
+  text-align: center;
+  margin: 10px;
+}
+// footer
+.main{
+  flex:1
+}
+
+.main-footer{
+  height: 40px;
+  background:linear-gradient(to left,rgb(149, 145, 145),rgb(166, 166, 191));
+  text-align: center;
+  width: 100%;
+  vertical-align: middle;
+  color:#f0f0f0;
+  bottom: 0;
+}
+// picture new.html
+.post-form{
+  text-align: center;
+  margin-top: 5%;
+  border-color: rgb(147, 175, 175);
+  border:1px solid  rgb(246, 246, 248);
+  background-color: #e1d5ca;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 40%;
+  border-radius: 5px;
+  padding: 10px 10px;
+  border-bottom: 1px solid gray;
+  display: inline-block;
+  box-shadow: 0 0 5px 6px #eceef1;
+}
+// user registration.form
+.login-form{
+  background-image: linear-gradient(40deg, #f6fafd, rgb(210, 199, 199));
+  margin-top: 2%;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+  border: solid 1px rgb(236, 225, 225);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 5px 6px #eceef1;
+}
