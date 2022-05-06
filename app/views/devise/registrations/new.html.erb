@@ -5,7 +5,19 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
     <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "nickname" %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "nickname" %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select(:birthday, include_blank: true, use_month_numbers: true,start_year: 1920,end_year: (Time.now.year - 10),date_separator: '%s')%>
   </div>
   <div class="field">
     <%= f.label :email %><br />
