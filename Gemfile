@@ -26,7 +26,9 @@ gem 'rexml'
 gem 'faker'
 gem 'kaminari'
 gem 'rails_admin'
-
+gem 'ancestry'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do

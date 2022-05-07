@@ -10,7 +10,16 @@
   </ul>
 </div>
 <% end %>
+
+
 <div class='post-form'>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.fields_for :images do |image| %>
+    <%= image.file_field :image, class: 'products_new-file' %>
+    <% end %>
+  </div>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
