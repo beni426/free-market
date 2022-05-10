@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+
   before_action :set_images, only: %i[show edit update]
   before_action :authenticate_user!, only: %i[new edit update destroy]
   # GET /products or /products.json
@@ -11,6 +12,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.includes(:product_images).order('created_at DESC').find(params[:id])
     @categorys = Category.all
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
     @prefectures = Prefecture.all
   end
 
@@ -100,12 +105,12 @@ class ProductsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_product
+  def set_product
       @product = Product.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def product_params
+  def product_params
       params.require(:product).permit(:name, 
         :description, 
         :condition,
@@ -114,8 +119,9 @@ class ProductsController < ApplicationController
         :shipping_area,
         :shipping_days,
         images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
-    end
+  end
     def set_images
       @images=@product.images
     end
+
 end
